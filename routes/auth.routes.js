@@ -37,7 +37,6 @@ router.post('/signup', (req, res, next) => {
 
     })
     .then(userFromDB => {
-      //console.log('Newly created user is: ', userFromDB);
       res.redirect('/userProfile');
     })
     .catch(error => {
@@ -110,5 +109,10 @@ router.post('/logout', (req, res, next) => {
     res.redirect('/');
   });
 });
+
+
+//////////// S E A R C H   U P ///////////
+
+/* router.post() */
 
 module.exports = router;
