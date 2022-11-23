@@ -110,9 +110,19 @@ router.post('/logout', (req, res, next) => {
   });
 });
 
+//////////// B O O K S  D E T A I L S ///////////
 
-//////////// S E A R C H   U P ///////////
+router.get("/books/:id", (req, res) => {
+  const id = req.params.id
 
-/* router.post() */
+  Book.findById(id)
+  .populate("description")
+  .then(book => {
+      res.render("views/books-details", { book })
+  })
+  .catch(err => {
+      console.log(err)
+  })
+})
 
 module.exports = router;
