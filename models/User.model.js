@@ -12,8 +12,12 @@ const userSchema = new Schema(
     passwordHash: {
       type: String,
       required: [true, 'Password is required.']
-    }
+    },
+    books: {
+      type: Schema.Types.ObjectId,
+      ref: "Book"
   },
+},
   {
         timestamps: true
   }

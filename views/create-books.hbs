@@ -1,0 +1,19 @@
+<h1>something</h1>
+
+
+<form action="/newbook" method="POST">
+
+    <input type="text" name="Title" placeholder="Title" >
+    <input type="text" name="Author" placeholder="Author" >
+    <input type="text" name="Genre" placeholder="Genre" >
+
+    <button type="submit">SUBMIT</button>
+
+    {{#if errorMessage}}
+    <br>
+    <br>
+
+  <span>Error!</span> {{errorMessage}}
+    {{/if}}
+
+</form>
