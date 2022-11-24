@@ -15,7 +15,14 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 
+
+
+const path = require("path");
+
 const app = express();
+
+app.set("view engine", "hbs");
+hbs.registerPartials(path.join(__dirname, "views/partials"));
 
 require('./config/session.config')(app);
 
