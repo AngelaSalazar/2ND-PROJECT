@@ -37,7 +37,8 @@ router.post('/newbook', (req,res,next)=>{
 router.get("/books", (req, res, next) =>{
     Book.find()
     .then((allBooks)=>{
-     res.render("books", {allBooks,  userInSession: req.session.currentUser })
+      let reversed= allBooks.reverse()
+     res.render("books", {reversed,  userInSession: req.session.currentUser })
     })
     .catch((err) =>{
      console.log(err)

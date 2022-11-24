@@ -20,6 +20,32 @@
 </form>
 
 <br><br>
-
-</div>
 <h1 class="h1">Recommended for you</h1>
+
+
+        {{#if errorMessage}}
+    <br>
+    <br>
+
+  <span>Error!</span> {{errorMessage}}
+  <br>
+  <br>
+    {{/if}}
+
+<br> <br>
+
+<div class="ml-6 grid grid-cols-5 gap-4">
+{{#each reversed}}
+    {{> card}}
+{{/each}}
+</div>
+
+
+{{#if userInSession}}
+<p class="body">Can't see what you are looking for? create it!</p>
+<a href="/newbook">create a book</a>
+{{else}}
+<p class="body">Can't see what you are looking for? Log-in and create it!</p>
+{{/if}}
+
+
