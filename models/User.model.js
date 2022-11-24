@@ -9,6 +9,7 @@ const userSchema = new Schema(
       required: [true, 'Username is required.'],
       unique: true
     },
+    // TODO: Il faut ajouter les prefs ici
     passwordHash: {
       type: String,
       required: [true, 'Password is required.']
