@@ -110,12 +110,13 @@ router.get("/books/:id/edit", (req, res) => {
   
   router.post("/books/:id/edit", (req, res) => {
     const id = req.params.id
-    const { Title, Author, Genre } = req.body
+    const { Title, Author, Genre, image } = req.body
   
     const book = {
         Title,
         Author,
-        Genre
+        Genre,
+        image
     }
   
     Book.findByIdAndUpdate(id, book)

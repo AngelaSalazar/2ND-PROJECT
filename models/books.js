@@ -19,6 +19,10 @@ const bookSchema = new Schema({
     creator: {
         type: Schema.Types.ObjectId,
         ref: "User"
+    },
+    image: {
+        type: String,
+        default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQxvDDqrhPUdcYgrTlibm3VGqfVwWB69NouA&usqp=CAU"
     }
 },
     {timestamp: true}
