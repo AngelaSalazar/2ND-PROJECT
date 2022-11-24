@@ -11,12 +11,21 @@ body {
   font-size: 16px;
 }
 
+
 .h1{
   font-family: 'Bona Nova';
   color: #023c40;
   font-size: 32px;
   font-weight: bold;
   margin-left: 32px;
+}
+
+.login{
+  font-family: 'Bona Nova';
+  color: #023c40;
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 520px;
 }
 
 .body{
