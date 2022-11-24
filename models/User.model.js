@@ -18,6 +18,12 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Book"
   },
+  likes: {
+    type: Array
+  },
+  readList: {
+    type: Array
+  }
 },
   {
         timestamps: true
