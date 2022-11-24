@@ -1,19 +1,21 @@
 {{#if userInSession}}
 
+<br> <br>
+
   <h2 class="header">Welcome, {{ userInSession.username }}!</h2>
 
 
 <div class="body">
   
-  <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 rounded hover:bg-[#4e46b9] hover:font-semibold md:hover:bg-transparent md:border-0 md:hover:text-[#4e46b9] md:p-0 dark:text-gray-400 md:dark:hover:text-white">
+  <ul class="font-['Raleway-bold'] flex flex-wrap text-sm font-medium text-center text-gray-500 rounded hover:bg-[#4e46b9] hover:font-semibold md:hover:bg-transparent md:border-0 md:hover:text-[#4e46b9] md:p-0 dark:text-gray-400 md:dark:hover:text-white">
     <li class="mr-2">
-        <a href="#" aria-current="page" class="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">Added by me</a>
+        <a href="#" aria-current="page" class="inline-block p-4 bg-[#a40e4c] hover:text-[#023c40] hover:bg-[#e0ebe9] text-[#023c40] bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">Added by me</a>
     </li>
 {{!--     <li class="mr-2">
         <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Manage my preferences</a>
     </li> --}}
     <li class="mr-2">
-        <a href="/newbook" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Add a book</a>
+        <a href="/newbook" class="inline-block p-4 rounded-t-lg hover:text-[#023c40] hover:bg-[#e0ebe9]text-[#023c40] dark:hover:bg-gray-800 dark:hover:text-gray-300">Add a book</a>
     </li>
   
 </ul>
@@ -25,6 +27,9 @@
 {{/if}}
 
 <div class="flex items-center mr-4"></div>
+  <div class="grid grid-cols-5 gap-4">
   {{#each booksCreated}}
+
     {{> card}}
   {{/each}}
+  </div>
