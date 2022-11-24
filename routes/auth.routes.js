@@ -4,6 +4,7 @@ const router = new Router();
 const bcryptjs = require('bcrypt');
 const saltRounds = 10;
 const User = require('../models/User.model')
+const Book = require('../models/Books')
 
 const mongoose = require('mongoose')
 
@@ -96,9 +97,18 @@ router.post('/login', (req, res, next) => {
     
     .catch(error => next(error));
 });
+
+  //////////// U S E R   P R O F I L E ///////////
  
 router.get('/userProfile', isLoggedIn, (req, res) => {
-  res.render('users/user-profile', { userInSession: req.session.currentUser });
+  Book.find({creator: req.session.currentUser._id})
+  .then((result)=>{
+    console.log(result)
+    res.render('users/user-profile', { userInSession: req.session.currentUser, booksCreated:result });
+  })
+
+  
+  
 });
 
   //////////// L O G   O U T ///////////
@@ -110,19 +120,11 @@ router.post('/logout', (req, res, next) => {
   });
 });
 
-//////////// B O O K S  D E T A I L S ///////////
+//////////// I N T E R E S T S ///////////
 
-router.get("/books/:id", (req, res) => {
-  const id = req.params.id
-
-  Book.findById(id)
-  .populate("description")
-  .then(book => {
-      res.render("views/books-details", { book })
-  })
-  .catch(err => {
-      console.log(err)
-  })
+router.post('/interest', (req, res, next)=>{
+  User.findByIdAndUpdate(req.session.currentUser._id, {$push: {likes : req.body}})
+  .then(()=> res.redirect('/userProfile'))
 })
 
 module.exports = router;
