@@ -1,5 +1,5 @@
 const mongoose=require("mongoose")
-const Books=require("./models/books")
+const Books=require("./models/Books")
 
 require("dotenv/config");
 const mongouri = process.env.MONGODB_URI;
