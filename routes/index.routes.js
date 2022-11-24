@@ -7,7 +7,11 @@ require('dotenv').config();
 /* const {GOOGLE_KEY} = require('dotenv') */
 
 /* GET home page */
-router.get('/', (req, res, next) => {
+router.get("/", (req, res, next) => {
+  res.render("index", {userInSession: req.session.currentUser})
+})
+
+/* router.get('/', (req, res, next) => {
   if (req.session.currentUser.id) {
     // Il faut retrieve l'utilisateur dans la BDD:
     // (à verifier ca depend ce que vous avez stocké dans req.session.currentUser)
@@ -23,11 +27,11 @@ router.get('/', (req, res, next) => {
   }
 
   res.render('index', { userInSession: req.session.currentUser });
-});
+}); */
 
 /////// book routes ////////
 
-router.get('/search/:input', (req, res) => {
+/* router.get('/search/:input', (req, res) => {
   const bookName = req.params.input;
 
   axios
@@ -49,6 +53,6 @@ router.get('/search/:input', (req, res) => {
     .catch(function (error) {
       console.error(error);
     });
-});
+}); */
 
 module.exports = router;
