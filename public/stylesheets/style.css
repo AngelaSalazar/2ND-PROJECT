@@ -19,6 +19,14 @@ body {
   margin-left: 32px;
 }
 
+.body{
+  font-family: 'Raleway';
+  font-weight: regular;
+  font-size: 16px;
+  color: #023c40;
+  margin-left: 32px;
+}
+
 .header{
   font-family: 'Bona Nova';
   font-size: 64px;

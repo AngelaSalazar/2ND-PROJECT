@@ -1,7 +1,6 @@
 {{#if userInSession}}
 
-  <h2>Welcome, {{ userInSession.username }}!</h2>
-  <p>This is your profile!</p>
+  <h2 class="header">Welcome, {{ userInSession.username }}!</h2>
 
 
 <div class="body">
@@ -25,9 +24,9 @@
   <p>You are not logged in!</p>
 {{/if}}
 
-
+<div class="flex items-center mr-4"></div>
   {{#each booksCreated}}
-<div class="flex items-center mr-4">
+<div class="flex-row"></div>
     <div class="w-52 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 flex-shrink-0">
         <img class="rounded-t-lg" src={{image}} />
     <div class="p-5">
@@ -40,5 +39,6 @@
         </a>
       </div>
     </div>
-  </div>
+</div>
   {{/each}}
+    </div>
