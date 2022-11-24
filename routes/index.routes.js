@@ -9,7 +9,8 @@ require('dotenv').config();
 router.get("/", (req, res, next) => {
   Book.find()
   .then((allBooks)=>{
-  res.render("index", {allBooks,userInSession: req.session.currentUser})
+    let reversed= allBooks.reverse()
+    res.render("index", {reversed,  userInSession: req.session.currentUser })
 
   })
 })
