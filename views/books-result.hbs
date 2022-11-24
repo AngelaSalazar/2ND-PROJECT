@@ -1,15 +1,6 @@
 <h2>something here</h2>
 
-        {{#if errorMessage}}
-    <br>
-    <br>
-
-  <span>Error!</span> {{errorMessage}}
-  <br>
-  <br>
-    {{/if}}
-
-{{#each allBooks}}
+{{#each booksFound}}
 <br>
 <a href="/book/{{_id}}">
   <p>Title: {{Title}}</p> 
@@ -19,8 +10,6 @@
 <br>
 
 {{/each}}
-
-
 
 {{#if userInSession}}
 <p>Can't see what you are looking for? create it!</p>

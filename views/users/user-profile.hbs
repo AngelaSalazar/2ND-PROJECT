@@ -6,6 +6,53 @@
   <a href="/newbook">create a book</a>
   <br>
 
+<form action="/interest" method="POST">
+    <div>
+      <input type="checkbox" name="scales" >
+      <label for="scales">1</label>
+    </div>
+
+    <div>
+      <input type="checkbox"  name="horns">
+      <label for="horns">2</label>
+    </div>
+
+    <div>
+      <input type="checkbox"  name="haha">
+      <label for="horns">3</label>
+    </div>
+
+    <div>
+      <input type="checkbox"  name="hehe">
+      <label for="horns">4</label>
+    </div>
+
+    <button type="submit">submit</button>
+</form>
+
+<div>
+  <p>Your books</p>
+  <br>
+  {{#each booksCreated}}
+
+  <div>
+    <a href="/book/{{_id}}">
+  <p>Title: {{Title}}</p> 
+  <p>Author: {{Author}}</p> 
+  <p>Genre: {{Genre}}</p>
+    </a>
+  </div>
+
+  <br>
+  {{/each}}
+
+</div>
+
+<div>
+  <p>read list</p>
+
+  
+</div>
 
 
 {{else}}
