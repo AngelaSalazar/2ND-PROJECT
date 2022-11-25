@@ -75,7 +75,8 @@ console.log("this is book creator: ", response.creator._id.toString() )
     } else {
         Book.find()
     .then((allBooks)=>{
-     res.render("books", {allBooks, errorMessage: 'you cannot delete what is not yours', userInSession: req.session.currentUser })
+    let reversed= allBooks.reverse()
+     res.render("books", {reversed, errorMessage: 'you cannot delete what is not yours', userInSession: req.session.currentUser })
     })
     .catch((err) =>{
      console.log(err)
@@ -100,7 +101,8 @@ router.get("/books/:id/edit", (req, res) => {
         else {
             Book.find()
             .then((allBooks)=>{
-             res.render("books", {allBooks, errorMessage: 'you cannot update something that is not yours', userInSession: req.session.currentUser })
+            let reversed= allBooks.reverse()
+             res.render("books", {reversed, errorMessage: 'you cannot update something that is not yours', userInSession: req.session.currentUser })
             })
         }
     })
