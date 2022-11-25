@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const Book = require('../models/Books');
+const Book = require('../models/books');
 
 require('dotenv').config();
 

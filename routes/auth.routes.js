@@ -4,7 +4,7 @@ const router = new Router();
 const bcryptjs = require('bcrypt');
 const saltRounds = 10;
 const User = require('../models/User.model')
-const Book = require('../models/Books')
+const Book = require('../models/books')
 
 const mongoose = require('mongoose')
 
