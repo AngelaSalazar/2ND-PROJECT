@@ -16,25 +16,31 @@
 
 <br> <br>
 <h1 class="h1">About this book</h1>
+<br> 
 
 <div class="container">
 
-    <img class="rounded-t-lg" src={{book.image}} />
-    <p>Name: {{book.Title}}</p>
-    <p>Author: {{book.Author}}</p>
-    <p>Genre: {{book.Genre}}</p>
+    <img class="rounded-t-lg mx-8" src={{book.image}} />
+    <br>
+    <p class="body">Name: {{book.Title}}</p>
+    <p class="body">Author: {{book.Author}}</p>
+    <p class="body">Genre: {{book.Genre}}</p>
 
 
 {{#if userInSession}}
-    <form action="/book/{{book._id}}/delete" method="POST">
-    <button type="submit">DELETE</button>
-    </form>
-
+   
+    <div class="flex flex-row mx-8">
     <form action="/books/{{book._id}}/edit" method="GET">
-    <button type="submit">UPDATE</button>
+    <button type="submit" class="font-['Raleway-bold'] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none bg-[#a40e4c] hover:bg-[#eb146e] focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">UPDATE</button>
     </form>
+     <form action="/book/{{book._id}}/delete" method="POST">
+    <button type="submit" class="mx-8 font-['Raleway-bold'] text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none bg-[#a40e4c] hover:bg-[#eb146e] focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">DELETE</button>
+    </form>
+    </div>
+  
+    
     {{else}}
-    <p>Login to delete or edit</p>
+    <p class="body">Login to delete or edit</p>
 {{/if}}
 
         {{#if errorMessage}}
