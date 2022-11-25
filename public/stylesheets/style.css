@@ -17,6 +17,14 @@ padding-bottom: 100px;
   font-size: 16px;
 }
 
+.alt-header{
+  font-family: 'Bona Nova';
+  margin-top: 10px;
+  font-size: 64px;
+  font-weight: bold;
+  color: #9c95dc;
+  text-align: center;
+}
 
 .h1{
   font-family: 'Bona Nova';
